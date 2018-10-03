@@ -9,8 +9,8 @@ It also demonstrates using an ORACLE and/or PROBABILITY THEORY
 in testing and BOUNDARY (EDGE) TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Mashengjun Li.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import random
 import builtins  # Never necessary, but here to make a point about SUM
@@ -33,7 +33,7 @@ def run_test_sum_sequence():
     print('--------------------------------------------------')
 
     # ------------------------------------------------------------------
-    # TODO: 2. READ the COMMENTS and CODE in this function,
+    # Done: 2. READ the COMMENTS and CODE in this function,
     #  asking questions as needed.
     #
     #   When you believe that you understand:
@@ -212,6 +212,10 @@ def sum_sequence(sequence):
     #      -- The TESTING code above does use   built_ins.sum
     #         as an ORACLE in TESTING this function, however.
     # ------------------------------------------------------------------
+    sum = 0
+    for k in range(len(sequence)):
+        sum = sequence[k] + sum
+    return sum
 
 
 def run_test_count_items_bigger_than():
@@ -381,7 +385,11 @@ def count_items_bigger_than(numbers, threshold):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(numbers)):
+        if numbers[k]> threshold:
+            count = count +1
+    return count
 
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """
@@ -511,7 +519,11 @@ def count_positive_sines(numbers):
     # TODO: 7. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(numbers)):
+        if math.sin(numbers[k])>0:
+            count = count+1
+    return count
 
 def run_test_sum_first_n():
     """ Tests the   sum_first_n   function. """
@@ -609,8 +621,12 @@ def sum_first_n(numbers, n):
       :type numbers:   list of tuple (of numbers)
       :type n: int
     """
+    sum = 0
+    for k in range(n):
+        sum = sum + numbers[k]
+    return sum
     # ------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # Done: 9. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # RESTRICTION:
