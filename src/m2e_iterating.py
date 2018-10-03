@@ -109,7 +109,7 @@ def fill_from_colors(window, graphics_object, colors):
 
     for k in range(len(colors)):
         graphics_object.fill_color = colors[k]
-        window.render(0.5)
+        window.render()
 
 
 def print_letters(string):
