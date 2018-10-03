@@ -20,7 +20,7 @@ def main():
 def run_test_count_negatives():
     """ Tests the   count_negatives   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done : 2. Implement this TEST function.
     #   It TESTS the  count_negatives  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests beyond those we wrote.
     #
@@ -86,7 +86,7 @@ def run_test_count_negatives():
 
 def count_negatives(seq):
     """
-    What comes in:  An sequence of numbers.
+    What comes in:  A sequence of numbers.
     What goes out:  Returns the number of items in the given sequence
       that are negative.
     Side effects:   None.
@@ -99,8 +99,13 @@ def count_negatives(seq):
     Type hints:
       :type seq: (list | tuple) of (int | float)
     """
+    count = 0
+    for k in range(len(seq)):
+        if seq[k] < 0:
+            count = count + 1
+    return count
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -208,7 +213,11 @@ def count_short_ones(seq_of_lists):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    count = 0
+    for k in range(len(seq_of_lists)):
+        if len(seq_of_lists[k]) < 3:
+            count = count+1
+    return count
 
 def run_test_draw_circles():
     """ Tests the   draw_circles   function. """
@@ -289,7 +298,12 @@ def draw_circles(window, points, radius, color):
     # TODO: 6. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
+    for k in range(len(points)):
+        circle = rg.Circle(points[k],radius)
+        circle.fill_color = color
+        circle.attach_to(window)
 
+    window.render()
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
